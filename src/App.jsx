@@ -15,6 +15,8 @@ import SearchBar from './components/SearchBar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import WallpaperModal from './components/WallpaperModal'
+import PWAInstallPrompt from './components/PWAInstallPrompt'
+import { usePWA } from './hooks/usePWA'
 
 import Login from './pages/admin/Login'
 import Dashboard from './pages/admin/Dashboard'
@@ -26,6 +28,7 @@ function PublicApp() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [activeWallpaper, setActiveWallpaper] = useState(null)
+  const pwa = usePWA()
 
   // Custom Hooks for State Management
   const { favorites, toggleFavorite } = useFavorites()
@@ -73,6 +76,7 @@ function PublicApp() {
 
   return (
     <>
+      <PWAInstallPrompt pwa={pwa} />
       {/* Global Overlays & Layout Effects */}
       <LoadingScreen visible={loading} />
       <BackgroundEffects />
