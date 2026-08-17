@@ -2,27 +2,29 @@ import sharp from 'sharp'
 import { promises as fs } from 'fs'
 
 async function generateIcons() {
-  const svgPath = 'public/logo/logo.svg'
+  const imagePath = 'C:\\Users\\vinay\\.gemini\\antigravity-ide\\brain\\ef470ddf-4cf6-431e-bf87-ae3c623d912d\\media__1786931870420.jpg'
   
   // Create icons directory if it doesn't exist
   await fs.mkdir('public/icons', { recursive: true })
 
   try {
     // Generate 192x192
-    await sharp(svgPath)
+    await sharp(imagePath)
       .resize(192, 192, {
-        fit: 'contain',
-        background: { r: 10, g: 14, b: 26, alpha: 1 } // Navy dark
+        fit: 'cover',
+        position: 'center'
       })
+      .toFormat('png')
       .toFile('public/icons/icon-192x192.png')
     console.log('Created icon-192x192.png')
 
     // Generate 512x512
-    await sharp(svgPath)
+    await sharp(imagePath)
       .resize(512, 512, {
-        fit: 'contain',
-        background: { r: 10, g: 14, b: 26, alpha: 1 } // Navy dark
+        fit: 'cover',
+        position: 'center'
       })
+      .toFormat('png')
       .toFile('public/icons/icon-512x512.png')
     console.log('Created icon-512x512.png')
 
