@@ -48,10 +48,10 @@ export default function Header({ onMenuOpen, onSearchOpen, onCategorySelect }) {
             e.preventDefault()
             scrollTo('#home')
           }}
-          className="flex items-center gap-2 md:gap-3 mx-auto md:mx-0 group"
+          className="flex items-center gap-1.5 sm:gap-2 md:gap-3 mx-auto md:mx-0 group"
         >
-          <img src="/logo/logo.svg" alt="Sanatan Strokes logo" className="h-9 w-9 md:h-10 md:w-10 group-hover:scale-105 transition-transform" />
-          <span className="font-display text-lg md:text-xl tracking-widest text-gradient-gold font-semibold">
+          <img src="/logo/logo.svg" alt="Sanatan Strokes logo" className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 flex-shrink-0 group-hover:scale-105 transition-transform" />
+          <span className="font-display text-base sm:text-lg md:text-xl tracking-[0.15em] sm:tracking-widest text-gradient-gold font-semibold">
             SANATAN STROKES
           </span>
         </a>

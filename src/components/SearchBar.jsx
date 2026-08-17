@@ -50,11 +50,14 @@ export default function SearchBar({ open, onClose, query, setQuery, onSelectCate
 
           {/* Modal Container */}
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Search"
             initial={{ opacity: 0, y: -16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -16, scale: 0.97 }}
             transition={{ duration: 0.25 }}
-            className="relative w-full max-w-2xl glass-panel divine-border rounded-2xl p-4 sm:p-6 shadow-gold-lg"
+            className="relative w-full max-w-2xl glass-panel divine-border rounded-2xl p-4 sm:p-6 shadow-gold-lg mx-auto"
           >
             <div className="flex items-center gap-3">
               <Search size={20} className="text-gold flex-shrink-0" />
@@ -63,9 +66,9 @@ export default function SearchBar({ open, onClose, query, setQuery, onSelectCate
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                type="text"
-                placeholder="Search Shiva, Krishna, Ganesha, 4K wallpapers..."
-                className="flex-1 bg-transparent outline-none text-ivory placeholder:text-ivory/40 text-base sm:text-lg"
+                type="search"
+                placeholder="Search wallpapers, 4K, deities..."
+                className="flex-1 bg-transparent outline-none text-ivory placeholder:text-ivory/40 text-base sm:text-lg w-full"
               />
               {query && (
                 <button

@@ -42,9 +42,11 @@ export default function WallpaperCard({
       )}
 
       {errored ? (
-        <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-ivory/40 bg-navy-light">
-          <ImageOff size={28} />
-          <span className="text-xs">Image unavailable</span>
+        <div className="h-full w-full flex flex-col items-center justify-center gap-3 text-ivory/40 bg-navy-light p-4 text-center">
+          <div className="p-3 rounded-full bg-navy-dark divine-border">
+            <ImageOff size={24} className="text-gold/50" />
+          </div>
+          <span className="text-xs font-medium">Preview unavailable</span>
         </div>
       ) : (
         <img
@@ -105,7 +107,8 @@ export default function WallpaperCard({
               e.stopPropagation()
               onView(wallpaper)
             }}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-navy/80 divine-border text-ivory text-xs sm:text-sm py-2 hover:bg-gold/20 hover:text-gold transition-all"
+            aria-label={`View ${wallpaper.title}`}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-navy/80 divine-border text-ivory text-xs sm:text-sm py-2.5 sm:py-2 hover:bg-gold/20 hover:text-gold transition-all"
           >
             <Eye size={14} /> View
           </button>
@@ -115,9 +118,10 @@ export default function WallpaperCard({
               e.stopPropagation()
               onDownload(wallpaper)
             }}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-bronze text-navy-dark text-xs sm:text-sm font-semibold py-2 hover:shadow-gold transition-shadow"
+            aria-label={`Download ${wallpaper.title}`}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-bronze text-navy-dark text-xs sm:text-sm font-semibold py-2.5 sm:py-2 hover:shadow-gold transition-shadow"
           >
-            <Download size={14} /> Download
+            <Download size={14} />
           </button>
         </div>
       </div>

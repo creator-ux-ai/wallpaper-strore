@@ -58,7 +58,7 @@ export default function WallpaperGrid({
             animate={{ opacity: 1, scale: 1 }}
             className="flex flex-col items-center justify-center py-16 px-4 text-center divine-border rounded-2xl bg-navy-light/40 max-w-lg mx-auto"
           >
-            <div className="h-16 w-16 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+            <div className="h-16 w-16 rounded-full bg-gold/10 flex items-center justify-center mb-4 animate-floaty">
               <SearchX size={32} className="text-gold" />
             </div>
             <h3 className="text-ivory font-display text-xl font-semibold">No wallpapers found</h3>
@@ -75,7 +75,7 @@ export default function WallpaperGrid({
             )}
           </motion.div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
             {wallpapers.map((w, i) => (
               <WallpaperCard
                 key={w.id}

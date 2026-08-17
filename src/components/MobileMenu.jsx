@@ -12,7 +12,8 @@ const items = [
 ]
 
 const socials = [
-  { label: 'Instagram', href: socialLinks.instagram, icon: Instagram },
+  { label: 'Instagram', href: socialLinks.instagram1, icon: Instagram },
+  { label: 'Instagram', href: socialLinks.instagram2, icon: Instagram },
   { label: 'Telegram', href: socialLinks.telegram, icon: Send },
   { label: 'YouTube', href: socialLinks.youtube, icon: Youtube }
 ]
@@ -75,10 +76,10 @@ export default function MobileMenu({ open, onClose, onCategorySelect }) {
                 <button
                   key={href}
                   onClick={() => scrollTo(href, category)}
-                  className="w-full flex items-center gap-4 px-6 py-3.5 text-ivory/85 hover:text-gold hover:bg-gold/5 transition-colors text-left"
+                  className="w-full flex items-center gap-4 px-6 py-4 text-ivory/85 hover:text-gold hover:bg-gold/5 transition-colors text-left"
                 >
                   <Icon size={18} className="text-gold" />
-                  <span className="tracking-wide">{label}</span>
+                  <span className="tracking-wide text-lg sm:text-base">{label}</span>
                 </button>
               ))}
             </nav>

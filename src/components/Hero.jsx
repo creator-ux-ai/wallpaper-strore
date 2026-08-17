@@ -39,7 +39,7 @@ export default function Hero({ query, setQuery, activeCategory, setActiveCategor
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display font-bold leading-[0.95] text-gradient-gold text-5xl sm:text-6xl md:text-7xl xl:text-8xl"
+            className="font-display font-bold leading-[0.95] text-gradient-gold text-4xl sm:text-6xl md:text-7xl xl:text-8xl"
           >
             SANATAN
           </motion.h1>
@@ -47,7 +47,7 @@ export default function Hero({ query, setQuery, activeCategory, setActiveCategor
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-display font-semibold leading-[0.95] text-ivory text-4xl sm:text-5xl md:text-6xl xl:text-7xl mt-1"
+            className="font-display font-semibold leading-[0.95] text-ivory text-3xl sm:text-5xl md:text-6xl xl:text-7xl mt-1 sm:mt-2"
           >
             STROKES
           </motion.h2>
@@ -90,7 +90,7 @@ export default function Hero({ query, setQuery, activeCategory, setActiveCategor
                   }
                 }}
                 placeholder="Search Shiva, Krishna, Ganesha, 4K..."
-                className="flex-1 bg-transparent px-3 py-1.5 outline-none text-ivory placeholder:text-ivory/40 text-sm sm:text-base"
+                className="flex-1 bg-transparent px-3 py-1.5 outline-none text-ivory placeholder:text-ivory/40 text-base"
               />
               {query ? (
                 <button
@@ -158,9 +158,9 @@ export default function Hero({ query, setQuery, activeCategory, setActiveCategor
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="relative flex justify-center"
+          className="relative flex justify-center mt-4 lg:mt-0"
         >
-          <div className="relative w-64 sm:w-80 md:w-96 aspect-[9/16] animate-floaty">
+          <div className="relative w-[70vw] max-w-[256px] sm:w-80 md:w-96 aspect-[9/16] animate-floaty">
             <div className="absolute -inset-4 rounded-[2rem] bg-gold/10 blur-2xl" />
             <img
               src="/images/shiva.jpg"

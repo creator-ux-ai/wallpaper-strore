@@ -11,14 +11,19 @@ export async function downloadWallpaper(wallpaper) {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(blobUrl)
-  } catch {
-    // Fallback direct link download
-    const link = document.createElement('a')
-    link.href = wallpaper.download
-    link.download = wallpaper.fileName || `${wallpaper.title.toLowerCase().replace(/\s+/g, '-')}.${(wallpaper.format || 'jpg').toLowerCase()}`
-    link.target = '_blank' // In case the direct link opens instead of downloading
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  } catch (error) {
+    try {
+      // Fallback direct link download
+      const link = document.createElement('a')
+      link.href = wallpaper.download
+      link.download = wallpaper.fileName || `${wallpaper.title.toLowerCase().replace(/\s+/g, '-')}.${(wallpaper.format || 'jpg').toLowerCase()}`
+      link.target = '_blank' // In case the direct link opens instead of downloading
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    } catch (fallbackError) {
+      console.error('Download failed:', error, fallbackError)
+      alert('Unable to download wallpaper automatically. Please right-click the image and select "Save image as..."')
+    }
   }
 }

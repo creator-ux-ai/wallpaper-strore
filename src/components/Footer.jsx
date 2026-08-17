@@ -14,7 +14,8 @@ const quickLinks = [
 const footerCategories = categories.filter((c) => !['All', 'Favorites'].includes(c)).slice(0, 8)
 
 const socials = [
-  { label: 'Instagram', href: socialLinks.instagram, icon: Instagram },
+  { label: 'Instagram', href: socialLinks.instagram1, icon: Instagram },
+  { label: 'Instagram', href: socialLinks.instagram2, icon: Instagram },
   { label: 'Telegram', href: socialLinks.telegram, icon: Send },
   { label: 'YouTube', href: socialLinks.youtube, icon: Youtube }
 ]

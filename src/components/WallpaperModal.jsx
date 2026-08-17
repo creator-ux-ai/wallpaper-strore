@@ -68,11 +68,14 @@ export default function WallpaperModal({
 
           {/* Modal Container */}
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
             initial={{ opacity: 0, scale: 0.94, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 16 }}
             transition={{ duration: 0.25 }}
-            className="relative w-full max-w-4xl max-h-[92vh] glass-panel sm:rounded-2xl divine-border overflow-hidden flex flex-col sm:flex-row shadow-gold-lg z-10"
+            className="relative w-full max-w-4xl max-h-[92vh] glass-panel rounded-t-2xl sm:rounded-2xl divine-border overflow-hidden flex flex-col sm:flex-row shadow-gold-lg z-10"
           >
             {/* Top Bar Actions */}
             <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
@@ -142,7 +145,7 @@ export default function WallpaperModal({
                   </span>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-ivory mb-2 leading-tight">
+                <h3 id="modal-title" className="font-display text-2xl font-bold text-ivory mb-2 leading-tight">
                   {wallpaper.title}
                 </h3>
 

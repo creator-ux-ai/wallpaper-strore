@@ -33,9 +33,13 @@ export default function CategoryFilter({ active, onChange, getCategoryCount, fav
           </button>
         </div>
 
+        {/* Scroll Fading Edges (Mobile) */}
+        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-navy-light/90 to-transparent pointer-events-none z-10 md:hidden" />
+        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-navy-light/90 to-transparent pointer-events-none z-10 md:hidden" />
+
         <div
           ref={scrollRef}
-          className="flex gap-2.5 overflow-x-auto no-scrollbar pb-1 pt-1 px-1 sm:px-6 scroll-smooth scrollbar-none"
+          className="flex gap-2.5 overflow-x-auto no-scrollbar pb-1 pt-1 px-4 sm:px-6 scroll-smooth scrollbar-none relative z-0"
         >
           {categories.map((cat) => {
             const isActive = active === cat
